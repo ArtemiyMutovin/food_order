@@ -1,0 +1,6 @@
+<tr>
+  <th><%= order.id %></th>
+  <% order.dishes.each do |dish| %>
+    <th><%= dish.name %></th>
+  <% end %>
+</tr>
