@@ -49,6 +49,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'bullet'
   gem 'web-console'
 
   # gem "rack-mini-profiler"
@@ -63,3 +64,5 @@ group :test do
   gem 'shoulda-matchers', '~> 5.1.0'
   gem 'webdrivers'
 end
+
+gem 'cssbundling-rails', '~> 1.1'

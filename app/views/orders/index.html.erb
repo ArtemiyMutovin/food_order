@@ -1,0 +1,22 @@
+<h1 style="text-align: center">Ваши заказы</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <table class="table table-striped">
+        <tr>
+          <td>Номер заказа</td>
+          <td>Блюда</td>
+        </tr>
+        <%= render @orders %>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="ingredients">
+  <div class="col-4">
+    <%= render 'orders/form' %>
+  </div>
+</div>
+
