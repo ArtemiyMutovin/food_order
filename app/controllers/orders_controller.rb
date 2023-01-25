@@ -6,7 +6,8 @@ class OrdersController < ApplicationController
 
   def dishes_count
     dishes =
-      Dish.joins(:dish_ingredients).joins('inner join order_ingredients on order_ingredients.ingredient_id = dish_ingredients.ingredient_id')
+      Dish.joins(:dish_ingredients)
+          .joins('inner join order_ingredients on order_ingredients.ingredient_id = dish_ingredients.ingredient_id')
           .group('dishes.name').order('COUNT(dishes.id) DESC').count('dishes.id')
     render json: dishes.map { |dish| { name: dish.first, count: dish.last } }.to_json
   end
