@@ -38,13 +38,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_21_161412) do
     t.index ["title"], name: "index_ingredients_on_title", unique: true
   end
 
-  create_table "order_dishes", force: :cascade do |t|
-    t.bigint "dish_id"
+  create_table "order_ingredients", force: :cascade do |t|
+    t.bigint "ingredient_id"
     t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["dish_id"], name: "index_order_dishes_on_dish_id"
-    t.index ["order_id"], name: "index_order_dishes_on_order_id"
+    t.index ["ingredient_id"], name: "index_order_ingredients_on_ingredient_id"
+    t.index ["order_id"], name: "index_order_ingredients_on_order_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -54,6 +54,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_21_161412) do
 
   add_foreign_key "dish_ingredients", "dishes"
   add_foreign_key "dish_ingredients", "ingredients"
-  add_foreign_key "order_dishes", "dishes"
-  add_foreign_key "order_dishes", "orders"
+  add_foreign_key "order_ingredients", "ingredients"
+  add_foreign_key "order_ingredients", "orders"
 end
